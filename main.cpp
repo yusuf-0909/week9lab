@@ -40,11 +40,11 @@ bool palindromeChecker(int number, int reversed = 0) {
     }
 
 }
-int main() {
-    int number;
-    cin >> number;
-    cout << palindromeChecker(number);
-}
+// int main() {
+//     int number;
+//     cin >> number;
+//     cout << palindromeChecker(number);
+// }
 
 //problem 4
 // int primeChecker(int number) {
@@ -59,3 +59,48 @@ int main() {
 //     int number;
 //     cin >> number;
 // }
+
+//problem 5
+// int evenNumber(int number, int count) {
+//     if (number == 0) {return count;}
+//     else {
+//         int temp = number % 10;
+//         if (temp % 2 == 0) {
+//             count++;
+//         }
+//         return evenNumber(number / 10, count);
+//     }
+// }
+// int main() {
+//     int number;
+//     cin >> number;
+//     cout << evenNumber(number, 0);
+// }
+
+//problem 6
+// int productOfDigits(int number) {
+//     if (number == 0) {return 1;}
+//     else {
+//         return number % 10 * productOfDigits(number / 10);
+//     }
+// }
+// int main() {
+//     int number;
+//     cin >> number;
+//     cout << productOfDigits(number);
+// }
+
+//problem 7
+int powerOfTwoChecker(int number) {
+    if (number == 0) {
+        return 0;
+    }
+    else {
+
+    }
+}
+//problem 8
+
+//problem 9
+
+//problem 10
