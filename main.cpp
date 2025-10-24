@@ -28,41 +28,46 @@ using namespace std;
 // }
 
 //problem 3
-bool palindromeChecker(int number, int reversed = 0) {
-    static int num = number;
-    if (number < 0) {
-        return false;
-    }
-    else {
-        int digit = number % 10;
-        reversed = reversed * 10 + digit;
-        return palindromeChecker(number % 10, reversed);
-    }
+bool isPalindrome(int num, int divisor = 0) {
+	if (divisor == 0) {
+		divisor = 1;
+		while (num / divisor >= 10)
+			divisor *= 10;
+	}
+	if (num == 0 || divisor <= 1)
+		return true;
 
+	int leading = num / divisor;
+	int trailing = num % 10;
+
+	if (leading != trailing)
+		return false;
+
+	// Remove leading and trailing digits and recurse
+	int trimmedNum = (num % divisor) / 10;
+	return isPalindrome(trimmedNum, divisor / 100);
 }
-// int main() {
-//     int number;
-//     cin >> number;
-//     cout << palindromeChecker(number);
-// }
+int main() {
+	int num;
+	cin >> num;
+	cout << isPalindrome(num) << endl;
+}
 
 //problem 4
-// bool primeChecker(int number, int divisor) {
-//     if (number % 2 == 0 || number <= 1) {
-//         return false;
-//     }
-//     if (divisor * divisor > number) {
-//         return true;
-//     }
-//     if (number % divisor == 0) {
-//         return false;
-//     }
-//     return primeChecker(number, divisor + 1);
+// bool isPrime(int n, int divisor) {
+// 	if (n > 1) {
+// 		if (divisor > sqrt(n)) {return true;}
+// 		if (n % divisor == 0) {return false;}
+// 		return isPrime(n, divisor+1);
+// 	}
 // }
 // int main() {
-//     int number;
-//     cin >> number;
-//     cout << primeChecker(number, 2);
+// 	int num;
+// 	cin >> num;
+// 	if (isPrime(num, 2) == true) {
+// 		cout << "true" << endl;
+// 	}
+// 	else {cout << "false" << endl;}
 // }
 
 //problem 5
