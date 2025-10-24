@@ -47,17 +47,22 @@ bool palindromeChecker(int number, int reversed = 0) {
 // }
 
 //problem 4
-// int primeChecker(int number) {
-//     if (number % 2 == 0) {
-//         return 0;
+// bool primeChecker(int number, int divisor) {
+//     if (number % 2 == 0 || number <= 1) {
+//         return false;
 //     }
-//     else {
-//         return primeChecker(number);
+//     if (divisor * divisor > number) {
+//         return true;
 //     }
+//     if (number % divisor == 0) {
+//         return false;
+//     }
+//     return primeChecker(number, divisor + 1);
 // }
 // int main() {
 //     int number;
 //     cin >> number;
+//     cout << primeChecker(number, 2);
 // }
 
 //problem 5
@@ -91,16 +96,36 @@ bool palindromeChecker(int number, int reversed = 0) {
 // }
 
 //problem 7
-int powerOfTwoChecker(int number) {
+int powerOfTwoChecker(int number, int power) {
     if (number == 0) {
         return 0;
     }
-    else {
-
+    if (number == pow(2, power)) {
+        return 1;
     }
+    else {return powerOfTwoChecker(number, power + 1);}
+}
+int main() {
+    int number;
+    cin >> number;
+    cout << powerOfTwoChecker(number, 2);
 }
 //problem 8
 
+
 //problem 9
 
+
 //problem 10
+// int powerFunction(int base, int exp) {
+//     if (exp == 0) {return 1;}
+//     else {
+//         if (exp % 2 == 0) {return powerFunction(base, exp /2) * powerFunction(base, exp / 2);}
+//         else {return base * powerFunction(base, exp - 1);}
+//     }
+// }
+// int main() {
+//     int power, exp;
+//     cin >> power >> exp;
+//     cout << powerFunction(power, exp) << endl;
+// }
